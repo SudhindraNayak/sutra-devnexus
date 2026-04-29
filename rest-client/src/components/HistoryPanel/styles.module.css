@@ -1,0 +1,62 @@
+.panel { display: flex; flex-direction: column; height: 100%; }
+.loading { padding: 16px; color: var(--text-muted); font-size: 13px; }
+
+.header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 12px; border-bottom: 1px solid var(--border-color); flex-shrink: 0;
+}
+.title { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
+.clearBtn {
+  padding: 3px 10px; background: transparent; border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm); color: var(--text-muted); font-size: 11px; cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.clearBtn:hover { color: var(--accent-error); border-color: var(--accent-error); }
+
+.list { flex: 1; overflow-y: auto; }
+
+.empty { padding: 20px 16px; text-align: center; color: var(--text-muted); font-size: 13px; }
+
+.entry {
+  padding: 8px 12px; cursor: pointer; border-bottom: 1px solid var(--border-color);
+  transition: background 0.1s;
+}
+.entry:hover { background: var(--bg-hover); }
+
+.entryTop { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+
+.methodBadge {
+  font-size: 10px; font-weight: 700; font-family: var(--font-mono);
+  padding: 2px 5px; border-radius: 3px; flex-shrink: 0; min-width: 40px; text-align: center;
+}
+.get    { color: var(--method-get); background: rgba(59,130,246,0.12); }
+.post   { color: var(--method-post); background: rgba(34,197,94,0.12); }
+.put    { color: var(--method-put); background: rgba(245,158,11,0.12); }
+.patch  { color: var(--method-patch); background: rgba(168,85,247,0.12); }
+.delete { color: var(--method-delete); background: rgba(239,68,68,0.12); }
+.head   { color: var(--method-head); background: rgba(139,92,246,0.12); }
+.options{ color: var(--method-options); background: rgba(6,182,212,0.12); }
+
+.status { font-size: 11px; font-weight: 700; font-family: var(--font-mono); }
+.success { color: var(--status-2xx); }
+.redirect { color: var(--status-3xx); }
+.client-error { color: var(--status-4xx); }
+.server-error { color: var(--status-5xx); }
+.unknown { color: var(--text-muted); }
+
+.time { font-size: 11px; color: var(--text-muted); margin-left: auto; }
+.duration { font-size: 11px; color: var(--text-muted); white-space: nowrap; }
+
+.removeBtn {
+  display: flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px; padding: 0;
+  background: transparent; border: none; color: var(--text-muted); cursor: pointer;
+  border-radius: var(--radius-sm); opacity: 0; transition: opacity 0.15s, color 0.15s;
+}
+.entry:hover .removeBtn { opacity: 1; }
+.removeBtn:hover { color: var(--accent-error); }
+
+.url {
+  font-size: 12px; color: var(--text-secondary); font-family: var(--font-mono);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
